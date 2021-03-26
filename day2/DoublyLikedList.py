@@ -88,39 +88,40 @@ class DoublyLinkedList:
             print(cur_node.value, end=' ')
             cur_node = cur_node.prev
         print()
-        
-doublyLinkedList = DoublyLinkedList()
 
-for i in range(7):
-    doublyLinkedList.prepend(i + 1)
-doublyLinkedList.print()
-doublyLinkedList.print_inverse()
+if __name__=="__main__": 
+    doublyLinkedList = DoublyLinkedList()
 
-print()
+    for i in range(7):
+        doublyLinkedList.prepend(i + 1)
+    doublyLinkedList.print()
+    doublyLinkedList.print_inverse()
 
-for i in range(7):
-    doublyLinkedList.append(i + 10)
-doublyLinkedList.print()
-doublyLinkedList.print_inverse()
+    print()
 
-print()
+    for i in range(7):
+        doublyLinkedList.append(i + 10)
+    doublyLinkedList.print()
+    doublyLinkedList.print_inverse()
 
-doublyLinkedList.set_head(5)
-doublyLinkedList.print()
-doublyLinkedList.print_inverse()
+    print()
 
-print()
+    doublyLinkedList.set_head(5)
+    doublyLinkedList.print()
+    doublyLinkedList.print_inverse()
 
-doublyLinkedList.insert(5,1000)
-doublyLinkedList.print()
-doublyLinkedList.print_inverse()
+    print()
 
-print()
+    doublyLinkedList.insert(5,1000)
+    doublyLinkedList.print()
+    doublyLinkedList.print_inverse()
 
-doublyLinkedList.remove(3)
-doublyLinkedList.print()
-doublyLinkedList.print_inverse()
+    print()
 
-print()
+    doublyLinkedList.remove(3)
+    doublyLinkedList.print()
+    doublyLinkedList.print_inverse()
 
-print(doublyLinkedList.access(4))
+    print()
+
+    print(doublyLinkedList.access(4))
