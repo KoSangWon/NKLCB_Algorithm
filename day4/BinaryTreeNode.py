@@ -70,6 +70,7 @@ class BinaryTree:
 
             if node.value == value:
                 isFound = True
+                return
 
             for i in (node.left, node.right):
                 if i is not None:
@@ -77,6 +78,22 @@ class BinaryTree:
            
         recursive(self.root)
         return isFound
+
+    def dfs_stack(self, value):
+        stack = [self.root] # push
+
+        while stack:
+            node = stack.pop() # pop
+
+            if node.value == value:
+                return True
+            
+            for i in(node.right, node.left):
+                if i is not None:
+                    stack.append(i)
+                    
+        return False
+
 
 if __name__=="__main__":
     binaryTree = BinaryTree([i for i in range(1, 8)])
