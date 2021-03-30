@@ -87,7 +87,7 @@ class BinarySearchTree:
     def insert(self, value):
         node, parent, direction = self.__search(value)
 
-        if parent is None:
+        if self.root is None:
             self.root = Node(value)
             return True
 
@@ -172,19 +172,16 @@ class BinarySearchTree:
 
         # 자식 노드가 둘인 경우
         else:
-            right_node_parent = node
-            right_node = node.left
+            right_node_parent = node # 왼쪽 Sub-Tree의 최댓값 노드의 부모
+            right_node = node.left # 왼쪽 Sub-Tree의 최댓값 노드
             while right_node.right:
                 right_node_parent = right_node
                 right_node = right_node.right 
 
-            if right_node.left:
-                right_node_parent.right = right_node.left        
-
-            if node == right_node_parent:
-                parent.right = right_node
-                
-
+            if right_node_parent != node:
+                right_node_parent.right = right_node.left   
+            else:
+                right_node_parent.left =  right_node.left
 
             right_node.left = node.left
             right_node.right = node.right
