@@ -93,7 +93,7 @@ for i in range(N, 0, -1):
         if w >= W[i]:
             need_calc[i-1].add(w-W[i])
 
-dp = [dict() for _ in range(2)]
+dp = [[0 for _ in range(K + 1)]for _ in range(2)]
 for i in range(1, N+1):
     for w in need_calc[i]:
         if w >= W[i]:
